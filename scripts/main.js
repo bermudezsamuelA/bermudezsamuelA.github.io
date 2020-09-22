@@ -514,11 +514,11 @@ const botones = [
 ];
 
 const contenido ={
-		show1: false,
+		show1: true,
 		show2: false,
 		show3: false,
 		show4: false,
-		show5: true,
+		show5: false,
 		
 	};
 const algo = new Vue({
