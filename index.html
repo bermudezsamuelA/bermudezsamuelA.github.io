@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="./public/styles.css" /> 
+<script src="https://kit.fontawesome.com/13529c74c8.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
+
+</head>
+<body>
+	<!-- CAPAS DE FONDO DE COLORES-->
+		<div class="capaUno"></div>
+		<div class="capaDos"></div>
+			<div class="capaCentro"> 
+				<div class="capaCubo">
+					<div class="esfera"></div>
+				</div>
+			</div>
+		<div class="capaTres"></div>
+		<div class="capaCuatro"></div>
+	
+	<div id="app">
+		<section>
+			<button type="button" v-for="boton in botons" v-bind:key= "boton.id" v-on:click='change(boton.id)'>
+				<i v-if="boton.un" v-html= "boton.unclicked"></i>
+				<i v-else v-html= "boton.clicked"></i>
+			</button>
+		</section> 
+
+		<article class="contenedor">
+				<transition name="slide-fade" mode="out-in">
+  					<article v-if="contenidos.show1" class="aboutme">
+						<section class="me">
+							<img v-bind:src="personal.foto" alt="la hermosura hecha persona">
+							<div class="titulos">
+								<h2>{{personal.nombre}}</h2>
+								<h6>{{personal.correo}}</h6>
+								<h3>{{personal.profesion}}</h3>
+							</div>
+							<div>
+								<span v-for="icono in personal.iconos">
+									<a v-bind:href="icono.red" target="_blank" v-bind:class="icono.logo"></a>
+								</span>
+							</div>
+						</section>
+						<section class="about">
+							<section class="acerca">
+								<h3>Acerca de mi <i class="fas fa-fist-raised"></i></h3>
+								<div class="izquierda">
+									<p>{{personal.about}}</p>
+								</div>
+								<div class="derecha">
+									<ul>
+									    <li> Nacimiento:</li>
+									    <li> {{personal.nacimiento}}</li>
+									    <li> Nacionalidad: </li>
+									     <li>{{personal.nacionalidad}}</li>
+									    <li> Direccion: </li>
+									     <li>{{personal.direccion}}</li>
+									</ul>	
+								</div>
+							</section>
+							<section class="servicios">
+								<h3>Servicios <i class="fas fa-award"></i> </h3>
+								<div class="izquierda">
+									<i class="far fa-file-code fa-7x"></i> 
+									<h4> {{ personal.servicio1.titulo}}</h4>
+									<p> {{personal.servicio1.descripcion}} </p>
+								</div>
+								<div class="derecha">
+									<i class="fas fa-laptop-code fa-7x"></i>
+									<h4> {{ personal.servicio2.titulo}}</h4>
+									<p> {{personal.servicio2.descripcion}} </p>
+								</div>
+							  
+							</section>
+						</section>
+  						
+  					</article>
+  				</transition>
+  				<transition name="slide-fade" mode="out-in">
+  					<article v-if="contenidos.show2" class="estudios">
+  						<img v-bind:src="estudios.foto" alt="Mural de ciencias">
+						<section class="study">
+							<h3> {{estudios.titulo}} </h3>
+							<table>
+								<tbody>
+									<tr>
+										<td class="titulo">Institucion: </td>
+										<td class="dato"> {{estudios.institucion}} </td>
+									</tr>
+									<tr>
+										<td class="titulo">Inicio: </td>
+										<td class="dato"> {{estudios.inicio}} </td>
+									</tr>
+									<tr>
+										<td class="titulo">Estado: </td>
+										<td class="dato"> {{estudios.estado}} </td>
+									</tr>
+									<tr>
+										<td class="titulo">Lugar: </td>
+										<td class="dato"> {{estudios.lugar}} </td>
+									</tr>
+								</tbody>
+							</table>
+						</section>
+						<section class="idiomas">
+								<div v-for="idioma in idiomas" v-bind:key="idioma.id">
+									<h4> {{idioma.idioma}} </h4>
+									<table>
+										<tbody>
+											<tr v-for=" estilo in idioma.estilo">
+												<td class="titulo"> {{estilo.modo}} </td>
+												<td class="dato"> {{estilo.nivel}} </td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+						</section>
+  					</article>
+  				</transition>
+  				<transition name="slide-fade" mode="out-in">
+  					<article v-if="contenidos.show3" class="cursos">
+						<section class="iconos">
+							<span v-for="icono in iconos" v-bind:key="icono.id">
+								<i v-html="icono.clase" v-on:click="cursosCambio(icono.id)"></i>
+								
+							</span>
+						</section>
+						<section class="listado">
+							<div v-for="curso in cursos" v-bind:key="curso.id" >
+								<transition name="fade" mode="out-in">
+									<article v-if="curso.show" class="lista">
+										<h2> {{curso.area}} </h2>
+										<div v-for="elemento in curso.curso" class="elemento">
+											<div class="info">
+												<span class="centro"> {{elemento.centro}}	</span>
+												<span class="fecha"> {{elemento.fecha}}	</span>
+												<span class="titulo"> {{elemento.titulo}}	</span>
+											</div>											
+											<img v-bind:src="elemento.certificado" alt="">
+										</div>
+									</article>
+								</transition>
+							</div>
+						</section>
+  					</article>
+  				</transition>
+  				<transition name="slide-fade" mode="out-in">
+  					<article v-if="contenidos.show4" class="exp">
+						<section v-for="experiencia in experiencias" class="experiencia">
+							<h3> {{experiencia.titulo}} </h3>
+							<span>Empresa:  {{experiencia.empresa}} </span>
+							<span>Inicio:  {{experiencia.fechaInicio}} </span>
+							<span>Fin:  {{experiencia.fechaFin}} </span>
+							<span>Funciones:  {{experiencia.funciones}} </span>
+							<span>Tareas:  {{experiencia.tareas}} </span>
+						</section>
+  						<section class="otro">
+  							<h3>Trabajos realizados</h32>
+							<a href="https://lista-de-intercambio.github.io/" target="_blank" class="fab fa-vuejs fa-5x"></a> 
+  						</section>
+  					</article>
+  				</transition>
+
+  				<transition name="slide-fade" mode="out-in">
+  					<article v-if="contenidos.show5" class="game">
+						<section class="tetris">
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+
+							<div class="fin"></div>
+							<div class="fin"></div>
+							<div class="fin"></div>
+							<div class="fin"></div>
+							<div class="fin"></div>
+							<div class="fin"></div>
+							<div class="fin"></div>
+							<div class="fin"></div>
+							<div class="fin"></div>
+						</section>
+							
+  						<section class="tabla">
+  							<section class="mini">
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+							</section>
+
+  							<h2 class="score"> Score: <span>0</span> </h2>
+  							<button type="button" id="start"> Start / Pause </button>
+  						</section>
+  					</article>
+  				</transition>
+
+		</article>
+	</div>
+
+<script src="https://unpkg.com/vue"></script>
+<script src="./scripts/main.js"></script>
+<script src="./scripts/game.js"></script>
+</body>
+</html>
