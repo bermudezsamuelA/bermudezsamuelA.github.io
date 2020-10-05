@@ -9,7 +9,7 @@ const personales = {
 	about:"Hola, soy Samuel Bermudez, Estudiante de Computacion, de la facultad de ciencias, UCV, deportista, con buena experiencia como Frontend developer y soporte tecnico, con altos deseos de crecer como desarrollador en python",
 	servicio1:{
 			titulo:"Web development",
-			descripcion:"Tranajo eficaz y eficiente, responsive y bonito",
+			descripcion:"Trabajo eficaz y eficiente, responsive y bonito",
 	},
 	servicio2:{
 			titulo:"Desarrollador",
