@@ -13,7 +13,7 @@ const personales = {
 	},
 	servicio2:{
 			titulo:"Desarrollador",
-			descripcion:"Desearrollos en python o cualquier plataforma, creativo e innovador",
+			descripcion:"Desarrollos en python o cualquier plataforma, creativo e innovador",
 	},
 	iconos:[ 
 		{
