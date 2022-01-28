@@ -5,14 +5,19 @@ const PersonalStart={
 			<div id="datosPrincipales">
 				<h5 id="Nombre"> {{name}} </h5>
 				
-				<p title="information" v-for="key in informationKeys"> 
+				<label title="information" v-for="key in informationKeys"> 
 				<span> {{key}} : </span> 
-				<label>{{information[key]}}</label>	
-				</p>
+                    <span v-if="key==='whatsapp'">
+                    <a v-bind:href="information[key]" target="_blank" class="whatsapp"> Whatsapp Me</a>
+                    </span> 
+                    <span v-else> 
+                    <label>{{information[key]}}</label>	
+                    </span> 
+				</label>
 				<details id="redesSociales">
 					<summary>Redes sociales</summary>
                     <i v-for="icon in icons">
-                            <a v-bind:href="icon.red" target="_blank" v-bind:class="icon.logo"></a>
+                            <a v-bind:href="icon.red" target="_blank" v-bind:class="icon.logo" class="socialIcon"></a>
                     </i>
 				  </details>
 				  

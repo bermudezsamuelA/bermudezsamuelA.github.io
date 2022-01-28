@@ -62,6 +62,7 @@ const KnowLedge={
         </section>
     </article>
     `,
+    components:['Modalcourses'],
     data(){
         return{
             name: personal.name,
@@ -69,5 +70,8 @@ const KnowLedge={
             informationKeys: Object.keys(personal.information),
             icons: socialMedia,
         }
+    },
+    methods:{
+
     },
 }

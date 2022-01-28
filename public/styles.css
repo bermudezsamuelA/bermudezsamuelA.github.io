@@ -210,6 +210,13 @@ body {
 	display: grid;
 	align-items: start;
 } 
+.socialIcon{
+	margin: 1rem;
+	background: rgba(250, 250, 250, .5);
+	padding: 1rem;
+	border-radius: 100%;
+}
+/*-------------------------------- RESUMEN---------------------------------*/
 #aboutMe{
 	display: grid;
 	align-content: start;    
@@ -247,7 +254,7 @@ h5{
 	margin-bottom: 0;
 	font-size: 3vw; 
 }
-details,p{
+label,details,p{
 	font-size: 1vw;
 	margin: 0;
 	display: inline;

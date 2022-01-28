@@ -3,6 +3,7 @@ const personal = {
     information:{
         email : "sam93quimica14@gmail.com",
         dir : "Caracas, Venezuela",
+        whatsapp : 'https://wa.me/584120164059?text=Quiero%20ser%20tu%20novia%20y%20darte%20muchos%20bebes'
     }
 	
 		
