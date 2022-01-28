@@ -1,0 +1,506 @@
+html {
+    height: 100%;
+}
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 3vw;
+	font-weight: 400;
+	line-height: 1.6;
+
+	display: grid; /*28*/
+}
+[v-cloak] {
+	display: none;
+}
+.contenedorDeFondo {
+	z-index: -1;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+	background: linear-gradient( to  right,
+						rgba(2, 4, 30, .3),
+						rgba(5, 13, 90, .3),
+						rgba(2, 4, 30, 0.3) );
+	position: fixed;
+	display: grid; /*28*/
+	grid-gap: 1rem;
+	grid-template-columns: [start] 1fr [one] 1fr [two] 1fr [three] 1fr [four] 1fr [five] 1fr [six] 1fr [seven] 1fr [eight] 1fr [nine] 1fr [ten] 1fr [eleven] 1fr [end];
+	grid-template-rows: [start] 1fr [one] 1fr [two] 1fr [three] 1fr [four] 1fr [five] 2.1fr [six] 1fr [seven] 1fr [end];
+}
+ /*----------- CAPAS A LA IZQUIERDA ----------*/
+.capaUno {
+	height: 100%;
+	width: 100%;
+	
+	background: linear-gradient( to  right,
+						rgba(12, 34, 241, .6),
+						rgba(164, 172, 250, .8));
+	box-shadow:  0rem 1rem 1rem 1rem rgba(0, 0, 0, 0.2);;
+	grid-column-start: start ;
+	grid-column-end: three;
+	grid-row-start: start;
+	grid-row-end: end;
+
+}
+
+
+.capaDos {
+	height: 100%;
+	width: 100%;
+	
+	background: linear-gradient( to  right,
+						rgba(12, 34, 241, .6),
+						rgba(164, 172, 250, .8));
+	box-shadow:  0rem -1rem 1rem 1rem rgba(0, 0, 0, 0.2);;
+
+	grid-column-start: start ;
+	grid-column-end: five;
+	grid-row-start: start;
+	grid-row-end: end;
+
+}
+ /*----- CAPAS A LA DERECHA ---------*/
+.capaTres {
+	height: 100%;
+	width: 100%;
+	background: linear-gradient( to  left,
+						rgba(12, 34, 241, .6),
+						rgba(164, 172, 250, .8));
+	box-shadow:  0rem -1rem 1rem 1rem rgba(0, 0, 0, 0.2);;
+
+	grid-column-start: seven ;
+	grid-column-end: end;
+	grid-row-start: start;
+	grid-row-end: end;
+}
+
+.capaCuatro {
+	height: 100%;
+	width: 100%;
+	
+	background: linear-gradient( to  left,
+						rgba(12, 34, 241, .6),
+						rgba(164, 172, 250, .8));
+	box-shadow:  0rem 1rem 1rem 1rem rgba(0, 0, 0, 0.2);
+
+	grid-column-start: nine;
+	grid-column-end: end;
+	grid-row-start: start;
+	grid-row-end: end;
+
+}
+
+/*----- CENTRO ----*/
+.capaCentro {
+	
+	margin: 5rem;
+	background: linear-gradient( to  left,
+						rgba(12, 34, 241, .6),
+						rgba( 6, 17, 120, .6),
+						rgba( 6, 17, 120, .6),
+						rgba(12, 34, 241, .6));
+	box-shadow:  1rem 1rem 3rem 1rem rgba(0, 0, 0, 0.5),
+				-1rem -1rem 3rem 1rem rgba(0, 0, 0, 0.5),
+				inset 1rem 1rem 3rem 1rem rgba(255, 255, 255, 0.3),
+				inset -1rem -1rem 3rem 1rem rgba(255, 255, 255, 0.3);
+
+	transform: rotate(45deg);
+	display: grid;
+	place-self: center;
+	animation: rotation 8s infinite linear;
+	
+	width: 15%;
+	height: 120%;
+	min-width: 10%;
+	min-height: 20%;
+}
+@keyframes rotation {
+	from {
+	  transform: rotate(0deg);
+	}
+	to {
+	  transform: rotate(359deg);
+	}
+  }
+
+.capaCubo {
+	height: 60%;
+	width: 60%;
+	min-width: 10%;
+	min-height: 10%;
+	background: linear-gradient( to  left,
+						rgba(6, 17, 120, .6),
+						rgba(12, 34, 241, .6),
+						rgba(6, 17, 120, .6));
+	box-shadow:  1rem 1rem 3rem 1rem rgba(0, 0, 0, 0.4),
+				-1rem -1rem 3rem 1rem rgba(0, 0, 0, 0.4),
+				inset 1rem 1rem 3rem 1rem rgba(255, 255, 255, 0.3),
+				inset -1rem -1rem 3rem 1rem rgba(255, 255, 255, 0.3);
+	
+	justify-self: center;
+	align-self: center;
+	display: grid;
+}
+
+.esfera {
+	height: 50%;
+	width: 50%;
+	border-radius: 100%;
+	min-width: 10%;
+	min-height: 10%;
+	background: linear-gradient( to top left,
+						rgba(137, 156, 236, .9),
+						rgba(175, 191, 245, .9),
+						rgba(255, 255, 255, .9));
+	
+	justify-self: center;
+	align-self: center;
+	min-width: 3%;
+}
+
+
+/*  --------------- APLICACION - CONTENIDO DE CV -----------------*/
+
+#app {
+	z-index: 1;
+	border-radius:  1rem;
+	background:   radial-gradient(
+						circle at top right,
+						rgba(250, 250, 250, 0.7),
+						rgba(230, 231, 238, 0.6),
+						rgba(175, 191, 245, 0.5)
+						);
+	display:grid;
+	width: 95%;
+	height: 95%;
+	margin-top: 5rem;
+	margin-bottom: 5rem;
+	justify-self: center;
+	align-self: stretch;
+	max-height: 5000rem
+	/* grid-template-columns: repeat(auto-fill,minmax(16rem,1fr)); */
+	
+}
+/*-------------------- CONTENIDO ----------------------*/
+
+
+/*---------------------INICIAL-------------------------------*/
+#DatosPersonales{
+	width: 80%;
+	align-self: start;
+	justify-self: center;
+	display: grid;
+	grid-template-areas:
+	"img .  . description ."
+}
+#imagenPrincipal{
+	min-width: 3rem;
+	max-width: 100%;
+	grid-area: img;
+	border-radius: 10%;
+}
+#datosPrincipales{
+	grid-area: description;
+	display: grid;
+	align-items: start;
+} 
+#aboutMe{
+	display: grid;
+	align-content: start;    
+	justify-content: center;    
+	align-items: start;
+	justify-items: center;
+}
+#sumaryTitle{
+	margin: 0;
+}
+#sumaryMe{
+	width: 50%;
+}
+#adorno{
+	display: grid;
+	place-items: center;	
+	margin: 5rem;
+}
+#knowledge{
+	display: grid;
+	grid-template-areas:
+	". progress .  carousel  ."
+	". . . .  ."
+	". . . .  ."
+
+}
+#knowledgeBars{
+	grid-area: progress;
+	min-width: 10%;
+	max-width: 50%;
+}
+
+
+h5{
+	margin-bottom: 0;
+	font-size: 3vw; 
+}
+details,p{
+	font-size: 1vw;
+	margin: 0;
+	display: inline;
+}
+i{
+	display: inline;
+}
+ul, ol, li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+  }
+/*---------------------Carousel-------------------------------*/
+ .carousel{
+	grid-area: carousel;
+	min-width: 10%;
+	min-height: 10%;
+	width: 100%;
+	height: 100%;
+	filter: drop-shadow(0 0 20rem #0003); 
+	padding: 0;
+	margin: 0;
+	perspective: 100px;
+	overflow:visible;
+	display: grid;
+	grid-template-columns: repeat(auto-fill,minmax(10rem,1fr));
+	grid-template-rows: repeat(auto-fill,minmax(10rem,1fr));
+
+	
+} 
+
+  .carousel__viewport {
+	border-radius: 5%;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	overflow: hidden;
+	counter-reset: item;
+	scroll-behavior: smooth;
+	scroll-snap-type: x mandatory;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+  }
+ 
+  .carousel__slide {
+	position: relative;
+	flex: 0 0 100%;
+	counter-increment: item;
+	width: 100%;
+	height: 100%;
+	background:   radial-gradient(
+						circle at top right,
+						rgba(250, 250, 250, 0.7),
+						rgba(230, 231, 238, 0.6),
+						rgba(175, 191, 245, 0.5)
+						);
+  } 
+    
+  .carousel__slide:before {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate3d(-50%,-40%,70px);
+	color: #fff;
+	font-size: 2em;
+  }
+  
+  .carousel__snapper {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	scroll-snap-align: center;
+	display: grid;
+	grid-template-columns: repeat(auto-fill,minmax(5vw,1fr));
+	grid-template-rows: repeat(auto-fill,minmax(10rem,1fr));
+
+  }
+  
+  @media (hover: hover) {
+	.carousel__snapper {
+	  animation-name: tonext, snap;
+	  animation-timing-function: ease;
+	  animation-duration: 4s;
+	  animation-iteration-count: infinite;
+	}
+  
+	.carousel__slide:last-child .carousel__snapper {
+	  animation-name: tostart, snap;
+	}
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+	.carousel__snapper {
+	  animation-name: none;
+	}
+  }
+  
+  #carousel:hover .carousel__snapper,
+  #carousel:focus-within .carousel__snapper {
+	animation-name: none;
+  }
+  /* -----------------FLECHAS A LOS LADOS-------------------------*/
+ .carousel::before,
+ .carousel::after,
+ .carousel__prev,
+ .carousel__next {
+	width: 4.5vw;
+	height: 4.5vw;
+	transform: translateY(-50%);
+	border-radius: 50%;
+	font-size: 0;
+	outline: 0;
+ }
+ 
+	.carousel::before,
+	.carousel__prev {
+	grid-column: 1;
+	grid-row: 2;
+	justify-self: start;
+	align-self: start;
+	}
+
+	.carousel::after,
+	.carousel__next {
+	grid-column: 4;
+	grid-row: 2;
+	justify-self: end;
+	align-self: start;
+
+	}
+
+  .carousel::before,
+  .carousel::after {
+	content: '';
+	z-index: 1;
+	background-color: #333;
+	background-size: 1.5rem 1.5rem;
+	background-repeat: no-repeat;
+	background-position: center center;
+	color: #fff;
+	font-size: 2.5rem;
+	line-height: 4rem;
+	text-align: center;
+	pointer-events: none;
+	display: block;
+  }
+  .carousel::before {
+	background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='0,50 80,100 80,0' fill='%23fff'/%3E%3C/svg%3E");
+	grid-column: 1;
+	grid-row: 2;
+	justify-self: start;
+	align-self: start;
+  }
+  
+  .carousel::after {
+	background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='100,50 20,100 20,0' fill='%23fff'/%3E%3C/svg%3E");
+	grid-column: 2;
+	grid-row: 2;
+	justify-self: end;
+	align-self: start;
+  }
+   
+/*-----------------------------BOTON DENTRO DEL CAROUSEL --------------------------------*/
+.buttonCourse{
+	appearance: none;
+	width: 100%;
+	height: 45%;
+	margin-top: -20%;
+	grid-column: 2 / span 2;
+	grid-row: 2;
+	justify-self: end;
+	align-self: start;
+	background: linear-gradient( to  left,
+						rgba(12, 34, 241, .6),
+						rgba(4, 31, 181, .6),
+						rgba( 6, 17, 120, .6),
+						rgba( 1, 10, 60, .6),
+						rgba( 6, 17, 120, .6),
+						rgba(4, 31, 181, .6),
+						rgba(12, 34, 241, .6));
+	color: #fff;
+	border-radius: 10%;
+	font-size: 1.5rem;
+	font-weight: 900;
+	letter-spacing: 0.3rem;
+}
+
+/*-----------------------------MODAL----------------------------*/
+
+#modalCourses{
+	width: 50vw;
+	height: 80vh;
+	background: linear-gradient( 180deg,
+						rgba( 1, 10, 60, .6),
+						rgba( 6, 17, 120, .6),
+						rgba(4, 31, 181, .5),
+						rgba(12, 34, 241, .5));
+	z-index: 2;
+	position: fixed;
+	justify-self: center;
+	border-radius: 10%;
+	border-style: solid;
+	border-width: 0.3rem;
+	border-color: rgba(255, 255, 255, 0.7);
+	color: #fff;
+	display: none;
+	/* display: grid; */
+	grid-template-areas: 
+	" . . title . ."
+	" . list list list ."
+	" . list list list ."
+	" . list list list ."
+	" . list list list ."
+	" . list list list ."
+	" . list list list ."
+	;
+}
+#titleModal{
+	align-self: start;
+	justify-self: center;
+	grid-area: title;
+	margin: 0;
+	padding: 0;
+}
+#listModal{
+	grid-area: list;
+	align-self: start;
+}
+ /* ------------------- EXPERIENCIAS --------------------- */
+
+ #Experiences{
+	 width: 100%;
+	 height: 120%;
+	 padding-bottom: 1rem;
+	 display: grid;
+	 grid-template-areas: 
+	 " . . titleExp . . "
+	 " . listExp listExp listExp . "
+	 ;
+ }
+ #titleExperiencia{
+	grid-area: titleExp;
+	place-self: center;
+	margin: 0;
+
+ }
+ #listExp{
+	grid-area: listExp;
+	align-self: start;
+	justify-self: start;
+ }

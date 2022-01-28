@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="./public/styles.css" /> 
+<script src="https://kit.fontawesome.com/13529c74c8.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital@1&display=swap" rel="stylesheet">
+	
+<title>Samuel Bermudez</title>	
+<link rel = "icon" href = "https://www.facebook.com/photo?fbid=10221462632013606&set=a.1631706310930" type = "image/x-icon">
+</head>
+<body>
+	<!-- CAPAS DE FONDO DE COLORES-->
+	<div class="contenedorDeFondo">
+		<div class="capaUno"></div>
+		<div class="capaDos"></div>
+			
+		<div class="capaTres"></div>
+		<div class="capaCuatro"></div>
+	</div>
+		
+	
+	<div id="app" v-cloak>
+		<!-- INICIO --> 
+		<Personal></Personal>
+		<!-- RESUMEN --> 
+		<Aboutme></Aboutme>
+		<!-- ADORNO --> 
+		<Fancything></Fancything>
+		<!-- El beta con el Carousel --> 
+		<Knowledge></Knowledge>
+		<!-- MODAL -->
+		
+		<!-- Experiencias -->
+		<Experiences></Experiences>
+	</div>
+
+	<script src="https://unpkg.com/vue@next"></script>
+	<script src="./scripts/data.js"></script>
+	<script src="./scripts/components/Personal.js"></script>
+	<script src="./scripts/components/AboutMe.js"></script>
+	<script src="./scripts/components/FancyThing.js"></script>
+	<script src="./scripts/components/Knowlegde.js"></script>
+	<script src="./scripts/components/Modal.js"></script>
+	<script src="./scripts/components/Experience.js"></script>
+
+	<script src="./scripts/main.js"></script>
+	
+
+	<script>
+		app.mount('#app')
+	</script>
+
+</body>
+</html>
