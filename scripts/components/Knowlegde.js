@@ -10,7 +10,7 @@ const KnowLedge={
         <section id='carousel' class="carousel" aria-label="Gallery">
             <ol class="carousel__viewport">
                     <li  
-                        v-for="(button,index) in buttonTitles"
+                        v-for="(button,index) in buttonDatas"
                         :id="button._id"
                         :key="button._id"
                         tabindex="0"
@@ -21,7 +21,13 @@ const KnowLedge={
                             class="carousel__prev">
                                 Go to last slide
                             </a>
-                                <input class="buttonCourse" type="button" v-bind:value="button.title">
+                                <input 
+                                    class="buttonCourse" 
+                                    type="button" 
+                                    v-bind:value="button.title"
+                                    @click="handleClick"
+                                >
+                                
                             <a 
                             v-bind:href="button.after"
                             class="carousel__next">
@@ -32,16 +38,33 @@ const KnowLedge={
             </ol>
         </section>
     </article>
+    <Modalcourses 
+            v-bind:show="showModal" 
+            v-bind:titulo="selected" 
+            v-bind:datas="certificates[selected]" 
+            v-bind:handleClose="handleClick" 
+        ></Modalcourses>
     `,
     components:['Modalcourses'],
     data(){
         return{
             rates: ratesKnowlege,
             ratesKeys: Object.keys(ratesKnowlege),
-            buttonTitles: buttonTitles,
+            buttonDatas: buttonDatas,
+            certificates: certificates,
+            showModal:false,
+            selected: '',
+            
         }
     },  
     methods:{
-
+        handleClick(event){
+            this.showModal = !this.showModal;
+            this.selected = event.target.value;
+        },
+        handleClose(){
+            this.showModal = false;
+            this.selected = '';
+        }
     },
 }

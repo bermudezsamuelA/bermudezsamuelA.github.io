@@ -1,10 +1,7 @@
-const app = Vue.createApp({
-	components: {
-		'Personal': PersonalStart,
-		'Aboutme': AboutMe,
-        'Fancything':FancyThing,
-		'Modalcourses':ModalCourses,
-        'Knowledge':KnowLedge,
-        'Experiences':ExperiencesResumen,
-	  }
-})
+const app = Vue.createApp({})
+app.component('Personal', PersonalStart);
+app.component('Aboutme', AboutMe);
+app.component('Fancything',FancyThing);
+app.component('Modalcourses',ModalCourses);
+app.component('Knowledge',KnowLedge);
+app.component('Experiences',ExperiencesResumen);

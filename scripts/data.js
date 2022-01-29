@@ -56,36 +56,41 @@ const ratesKnowlege={
     "Live expensive without working": '0',
 }
 
-const buttonTitles=[
+const buttonDatas=[
     {
         title:'Python',
         _id:'python_slide',
         before:'#others_slide',
         after:'#javascript_slide',
+        showModal: false,
     },
     {
         title:'Javascript',
         _id:'javascript_slide',
         before:'#python_slide',
         after:'#html_slide',
+        showModal: false,
     },
     {
         title:'HTML & CCS3',
         _id:'html_slide',
         before:'#javascript_slide',
         after:'#db_slide',
+        showModal: false,
     },
     {
         title:'DB',
         _id:'db_slide',
         before:'#html_slide',
         after:'#others_slide',
+        showModal: false,
     },
     {
         title:'Others',
         _id:'others_slide',
         before:'#db_slide',
         after:'#python_slide',
+        showModal: false,
     },
 ]
 const certificates={
@@ -97,7 +102,7 @@ const certificates={
             link: "https://www.codecademy.com/profiles/devRockstar18876/certificates/6c152bd262967f8c941c9707ed636bda"
         },
         {
-            in4stitution: "Codecademy",
+            institution: "Codecademy",
             date: "2020",
             title: "Data analysis with Pandas",
             link: "https://www.codecademy.com/profiles/devRockstar18876/certificates/95dd3ed417d7d6c449afffc6401b310a"
