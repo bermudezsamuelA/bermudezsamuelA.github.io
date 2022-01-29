@@ -14,6 +14,23 @@ body {
 
 	display: grid; /*28*/
 }
+h5{
+	margin-bottom: 0;
+	font-size: 3vw; 
+}
+label, details, p{
+	font-size: 1vw;
+	margin: 0;
+	display: inline;
+}
+i{
+	display: inline;
+}
+ul, ol, li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+  }
 [v-cloak] {
 	display: none;
 }
@@ -230,11 +247,13 @@ body {
 #sumaryMe{
 	width: 50%;
 }
+/*-------------------------------- ADORNO---------------------------------*/
 #adorno{
 	display: grid;
 	place-items: center;	
 	margin: 5rem;
 }
+/*-------------------------------- Conocimientos, sin el tema del Carousel---------------------------------*/
 #knowledge{
 	display: grid;
 	grid-template-areas:
@@ -247,26 +266,21 @@ body {
 	grid-area: progress;
 	min-width: 10%;
 	max-width: 50%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: stretch;
+	align-content: flex-start;
 }
 
-
-h5{
-	margin-bottom: 0;
-	font-size: 3vw; 
-}
-label, details, p{
-	font-size: 1vw;
+.progressSection{
 	margin: 0;
-	display: inline;
+	margin-top: 0.5rem;
+	font-size: 1rem;
 }
-i{
-	display: inline;
+.labelProgress{
+	margin-right: 1rem;
 }
-ul, ol, li {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-  }
 /*---------------------Carousel-------------------------------*/
  .carousel{
 	grid-area: carousel;
@@ -379,7 +393,7 @@ ul, ol, li {
 	grid-column: 1;
 	grid-row: 2;
 	justify-self: start;
-	align-self: start;
+	align-self: end;
 	}
 
 	.carousel::after,
@@ -387,7 +401,7 @@ ul, ol, li {
 	grid-column: 4;
 	grid-row: 2;
 	justify-self: end;
-	align-self: start;
+	align-self: end;
 
 	}
 
@@ -411,7 +425,7 @@ ul, ol, li {
 	grid-column: 1;
 	grid-row: 2;
 	justify-self: start;
-	align-self: start;
+	align-self: end;
   }
   
   .carousel::after {
@@ -419,19 +433,19 @@ ul, ol, li {
 	grid-column: 2;
 	grid-row: 2;
 	justify-self: end;
-	align-self: start;
+	align-self: end;
   }
    
 /*-----------------------------BOTON DENTRO DEL CAROUSEL --------------------------------*/
 .buttonCourse{
 	appearance: none;
 	width: 100%;
-	height: 45%;
-	margin-top: -20%;
+	height: 60%;
+	/* margin-top: -20%; */
 	grid-column: 2 / span 2;
 	grid-row: 2;
 	justify-self: end;
-	align-self: start;
+	align-self: center;
 	background: linear-gradient( to  left,
 						rgba(12, 34, 241, .6),
 						rgba(4, 31, 181, .6),
@@ -442,7 +456,7 @@ ul, ol, li {
 						rgba(12, 34, 241, .6));
 	color: #fff;
 	border-radius: 10%;
-	font-size: 1.5rem;
+	font-size: 2rem;
 	font-weight: 900;
 	letter-spacing: 0.3rem;
 }
