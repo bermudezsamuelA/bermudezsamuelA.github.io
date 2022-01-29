@@ -193,25 +193,42 @@ ul, ol, li {
 						rgba(230, 231, 238, 0.6),
 						rgba(175, 191, 245, 0.5)
 						);
-	display:grid;
+	display: grid ;
 	width: 95%;
-	height: 95%;
+	height: 92%;
 	margin-top: 5rem;
-	margin-bottom: 5rem;
+	margin-bottom: 15rem;
 	justify-self: center;
 	align-self: stretch;
-	max-height: 5000rem
+	max-height: 5000vh;
+	grid-template-areas: 
+	"	.	.	.	.	"
+	"	.	principal	.	.	"
+	"	.	about	.	.	"
+	"	.	fancy	.	.	"
+	"	.	knowledge	.	.	"
+	"	.	exp	.	.	"
+	"	.	.	.	.	"
+	"	.	.	.	.	"
+	"	.	.	.	.	"
+	"	.	.	.	.	"
+	"	.	.	.	.	"
+	"	.	.	.	.	"
+	"	.	.	.	.	"
+	"	.	.	.	.	"
+	;
 	/* grid-template-columns: repeat(auto-fill,minmax(16rem,1fr)); */
-	
+	/* grid-template-rows: repeat(auto-fill,minmax(16rem,1fr)); */
 }
 /*-------------------- CONTENIDO ----------------------*/
 
 
 /*---------------------INICIAL-------------------------------*/
 #DatosPersonales{
-	width: 80%;
-	align-self: start;
-	justify-self: center;
+	grid-area: principal;
+	align-self: center;
+	padding-left: 15%;
+	width: 90%;
 	display: grid;
 	grid-template-areas:
 	"img .  . description ."
@@ -235,6 +252,7 @@ ul, ol, li {
 }
 /*-------------------------------- RESUMEN---------------------------------*/
 #aboutMe{
+	grid-area: about;
 	display: grid;
 	align-content: start;    
 	justify-content: center;    
@@ -249,12 +267,14 @@ ul, ol, li {
 }
 /*-------------------------------- ADORNO---------------------------------*/
 #adorno{
+	grid-area: fancy;
 	display: grid;
 	place-items: center;	
 	margin: 5rem;
 }
 /*-------------------------------- Conocimientos, sin el tema del Carousel---------------------------------*/
 #knowledge{
+	grid-area: knowledge;
 	display: grid;
 	grid-template-areas:
 	". progress .  carousel  ."
@@ -277,6 +297,7 @@ ul, ol, li {
 	margin: 0;
 	margin-top: 0.5rem;
 	font-size: 1rem;
+	font-weight: bold;
 }
 .labelProgress{
 	margin-right: 1rem;
@@ -533,6 +554,7 @@ ul, ol, li {
  /* ------------------- EXPERIENCIAS --------------------- */
 
  #Experiences{
+	 grid-area: exp;
 	 width: 100%;
 	 height: 120%;
 	 padding-bottom: 1rem;
@@ -541,6 +563,7 @@ ul, ol, li {
 	 " . . titleExp . . "
 	 " . listExp listExp listExp . "
 	 ;
+	 color: #fff;
  }
  #titleExperiencia{
 	grid-area: titleExp;
@@ -550,6 +573,40 @@ ul, ol, li {
  }
  #listExp{
 	grid-area: listExp;
-	align-self: start;
-	justify-self: start;
+	width: 95%;
+	height: 100%;
+	align-self: center;
+	justify-self: center;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+	align-content: space-around;
+	column-gap: 5vw;
+ }
+ .expContainter{
+	 flex-grow: 1;
+	 color:#fff;
+	 background: radial-gradient(ellipse at top, 
+	 			rgba(12, 34, 241, .3), 
+				transparent),
+	 			radial-gradient(ellipse at bottom, 
+				 rgba(12, 34, 241, .3), 
+				 transparent);;
+	border-style: solid;
+	border-width: 0.3rem;
+	border-color: rgba(255, 255, 255, 0.7);
+	align-self: flex-start;
+	flex-basis: fit-content;
+ }
+ .expTitleSummary{
+	 font-size: 1.5rem;
+	 font-weight: bold;
+	 
+ }
+ .itemExpTitle{
+	 font-weight: bold;
+ }
+ .itemExperienca{
+	 display: block;
  }

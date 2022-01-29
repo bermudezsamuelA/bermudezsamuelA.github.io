@@ -3,28 +3,34 @@ const ExperiencesResumen={
     <article id="Experiences">
         <h6 id="titleExperiencia"> Experiencias </h6>
 
-        <ul id="listExp">
-            <li>
-                <details id="experiencia">
-                    <summary>Titulo  del puesto</summary>
-                    <div id="esperienciaDetail">
-                        <label for="file" id="itemExperienca"> algun detalle</label>
-                        <p id="desarrollo">
-                            desarrollo
-                        </p>
+        <section id="listExp"  >
+            <div class="expContainter"  v-for="(experience,index) in experiences">
+                <details class="expDetail" >
+                    <summary class="expTitleSummary">{{experience.enterprise}}</summary>
+                    <div class="experienciaDetail">
+                        <label for="file" class="itemExperienca"> 
+                            <span class="itemExpTitle">   periodo: </span> {{experience.period}}
+                        </label>
+                        <label for="file" class="itemExperienca"> 
+                            <span class="itemExpTitle"> cargo:  </span> {{experience.charge}}
+                        </label>
+                        <label for="file" class="itemExperienca"> 
+                            <span class="itemExpTitle"> funciones: </span> {{experience.functions}}
+                        </label>
+                        <label for="file" class="itemExperienca"> 
+                           <span class="itemExpTitle"> descripcion: </span> {{experience.description}}
+                        </label>
                     </div>
                     </details>
                     
-            </li>
-        </ul>
+            </div>
+        </section>
     </article> 
     `,
     data(){
         return{
-            name: personal.name,
-            information: personal.information,
-            informationKeys: Object.keys(personal.information),
-            icons: socialMedia,
+            experiences:experience,
+            experienceKeys: Object.keys(experience )
         }
     },
 }
