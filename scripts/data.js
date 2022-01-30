@@ -32,8 +32,8 @@ const aboutMe = {
 	title : "Quien soy yo?",
     content:`
     Soy una persona entusiasta de la programación y de aprender constantemente sobre herramientas que me sean útiles en mis metas además me gusta mucho la vida fitness, entreno constantemente, 
-    también busco desarrollar mi vida espiritual y tengo mis propios proyectos por lo que busco crecer en cada área de mi vida, trabajo duro la verdad, mi peor debilidad seria que a veces soy desordenado o flojo,
-     pero por lo mismo busco trabajar todo tan rápido y bien como sea posible para luego poder descansar
+    también busco desarrollar mi vida espiritual y tengo mis propios proyectos por lo que busco crecer en cada área de mi vida, trabajo duro la verdad,
+     siempre busco trabajar rapido y eficiente, para tener bastante tiempo para mi y para descansar y salir a comer heladitos
     `	
 };
 
